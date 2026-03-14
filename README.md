@@ -52,6 +52,7 @@ Each playbook follows a consistent structure:
 
 ### 📋 Compliance & Standards
 - **[PCI-DSS Testing](08-Compliance/pci-dss-pentesting-playbook.md)** — PCI-DSS compliance assessment, cardholder data protection, payment system security
+- **[PCI-DSS Web App Quick Reference](08-Compliance/pci-webapp-pentesting-playbook.md)** — Focused quick-reference for web app & API pentesting with PCI compliance (commands + expected outputs)
 
 ---
 
@@ -160,8 +161,8 @@ All playbooks follow the **OWASP Web Security Testing Guide (WSTG)** structure:
 
 ## Version
 
-**Last Updated:** March 11, 2026  
-**Playbooks:** 11 comprehensive guides  
+**Last Updated:** March 14, 2026  
+**Playbooks:** 12 comprehensive guides  
 **Testing Categories:** 80+
 
 ---
