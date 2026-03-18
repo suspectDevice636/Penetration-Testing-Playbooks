@@ -10,10 +10,11 @@ This repository contains comprehensive penetration testing playbooks organized b
 |----------|------|-------|----------|
 | **Information Gathering** | `01-information-gathering.md` | WSTG-INFO-02 to 08 | fingerprint, recon, enumeration, metafiles |
 | **Configuration & Deployment** | `02-configuration-deployment.md` | WSTG-CONF-01 to 12 | CSP, headers, HTTP methods, cloud storage, backups |
-| **Identity Management** | `03-identity-management.md` (coming) | WSTG-IDNT-01 to 05 | roles, RBAC, registration, account enumeration |
-| **Authentication** | `04-authentication.md` (coming) | WSTG-ATHN-01 to 10 | credentials, password reset, MFA, lockout |
-| **Authorization** | `05-authorization.md` (coming) | WSTG-ATHZ-01 to 04 | IDOR, privilege escalation, path traversal |
-| **Session Management** | `06-session-management.md` (coming) | WSTG-SESS-01 to 05 | session fixation, cookies, CSRF, token prediction |
+| **GraphQL API Testing** ⭐ | `03-graphql-api-testing.md` | Custom | introspection, schema enum, injection, DoS, auth |
+| **Identity Management** | `04-identity-management.md` (coming) | WSTG-IDNT-01 to 05 | roles, RBAC, registration, account enumeration |
+| **Authentication** | `05-authentication.md` (coming) | WSTG-ATHN-01 to 10 | credentials, password reset, MFA, lockout |
+| **Authorization** | `06-authorization.md` (coming) | WSTG-ATHZ-01 to 04 | IDOR, privilege escalation, path traversal |
+| **Session Management** | `07-session-management.md` (coming) | WSTG-SESS-01 to 05 | session fixation, cookies, CSRF, token prediction |
 
 ---
 
@@ -124,6 +125,15 @@ This repository contains comprehensive penetration testing playbooks organized b
 - Open Ports/Services → WSTG-CONF-01
 - Cloud Storage Misconfiguration → WSTG-CONF-11
 
+### GraphQL API Security
+- Introspection Enabled → GraphQL Testing
+- Schema Enumeration → GraphQL Testing
+- GraphQL Injection → GraphQL Testing
+- Query Complexity/DoS → GraphQL Testing
+- Field-Level Authorization Bypass → GraphQL Testing
+- Mutation Authorization Bypass → GraphQL Testing
+- Recursive Query/Fragment DoS → GraphQL Testing
+
 ---
 
 ## 🎯 Search by Keyword
@@ -147,6 +157,9 @@ This repository contains comprehensive penetration testing playbooks organized b
 | **HSTS, Downgrade Attack** | WSTG-CONF-07 | `02-configuration-deployment.md` |
 | **API, Endpoint Discovery** | WSTG-INFO-06 | `01-information-gathering.md` |
 | **Recon, OSINT, Enumeration** | WSTG-INFO-* | `01-information-gathering.md` |
+| **GraphQL, Introspection, Schema** | GraphQL Testing | `03-graphql-api-testing.md` |
+| **Query Complexity, DoS, Batching** | GraphQL Testing | `03-graphql-api-testing.md` |
+| **GraphQL Injection, Mutation Testing** | GraphQL Testing | `03-graphql-api-testing.md` |
 
 ---
 
@@ -186,6 +199,19 @@ CSP is one of the strongest XSS mitigations. This test covers:
 - Common misconfigurations
 - Using Google's CSP Evaluator tool
 
+### GraphQL API Security Testing
+**File:** `03-graphql-api-testing.md`
+
+Modern GraphQL APIs have unique security challenges. This guide covers:
+- Detecting introspection enabled (critical vulnerability)
+- Full schema enumeration and dumping
+- Authorization bypasses at field/mutation level
+- Query injection (SQL, NoSQL, LDAP)
+- Query complexity DoS attacks (nesting, aliases, fragments)
+- Error-based information disclosure
+- Tools: Altair, InQL (Burp), GraphQL CLI, Nuclei
+- Remediation code examples
+
 ---
 
 ## 📝 Original Expanded Playbook
@@ -207,9 +233,10 @@ The full `WSTG-Playbook-Expanded.md` contains all tests in a single file. These 
 ## 📊 Coverage
 
 - **Total WSTG Tests Covered:** 40+ tests
-- **Categories:** 6 (Information Gathering, Configuration & Deployment, Identity, Authentication, Authorization, Session Management)
-- **Vulnerability Types:** 30+ unique vulnerability categories
-- **Tools Referenced:** 50+ security testing tools
+- **GraphQL Tests:** 13 specialized tests (introspection, injection, DoS, auth)
+- **Categories:** 7 (Information Gathering, Configuration & Deployment, GraphQL, Identity, Authentication, Authorization, Session Management)
+- **Vulnerability Types:** 35+ unique vulnerability categories (including GraphQL-specific)
+- **Tools Referenced:** 60+ security testing tools
 
 ---
 
