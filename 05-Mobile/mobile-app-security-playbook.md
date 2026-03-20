@@ -7,6 +7,14 @@
 
 This playbook has been restructured into three focused guides for clarity and speed during engagements.
 
+### 🚀 Tools Quick Start
+
+**[MobSF Quick Reference](./mobsf-quick-reference.md)** - Fast static analysis triage
+- Automated scanning for hardcoded secrets, permissions, weak crypto
+- GUI navigation guide (Android & iOS)
+- Time-boxed approach for quick findings
+- Start here before manual testing
+
 ### Choose Your Path:
 
 **🔧 [Common & Shared](./mobile-app-security-common.md)**
