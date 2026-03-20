@@ -5,7 +5,7 @@
 
 ## Overview
 
-This guide covers iOS-specific pentesting methodology. For shared setup, tools, and reporting, see **[Common Guide](mobile-app-security-common.md)**.
+This guide covers iOS-specific pentesting methodology. For shared setup, tools, and reporting, see **[Common Guide](./mobile-app-security-common.md)**.
 
 **Quick Links:**
 - Storage Security (Section 5.2)
@@ -804,7 +804,7 @@ sudo pfctl -ef mitmproxy.conf
 ### 4.2 Analyzing API Requests (iOS)
 **Objective:** Test API endpoints for vulnerabilities
 
-See **[Common Guide - API Testing](mobile-app-security-common.md#42-analyzing-api-requests)**
+See **[Common Guide - API Testing](./mobile-app-security-common.md#42-analyzing-api-requests)**
 
 ### 4.3 Certificate Pinning Bypass (iOS)
 **Objective:** Bypass certificate pinning to intercept HTTPS

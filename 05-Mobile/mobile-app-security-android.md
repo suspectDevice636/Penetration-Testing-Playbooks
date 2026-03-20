@@ -5,7 +5,7 @@
 
 ## Overview
 
-This guide covers Android-specific pentesting methodology. For shared setup, tools, and reporting, see **[Common Guide](mobile-app-security-common.md)**.
+This guide covers Android-specific pentesting methodology. For shared setup, tools, and reporting, see **[Common Guide](./mobile-app-security-common.md)**.
 
 **Quick Links:**
 - Storage Security (Section 5.1)

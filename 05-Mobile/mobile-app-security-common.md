@@ -8,8 +8,8 @@
 This document covers shared methodology, prerequisites, tools, and reporting for iOS and Android penetration testing. 
 
 **Platform-specific guides:**
-- **[Android](mobile-app-security-android.md)** - APK decompilation, static/dynamic analysis, Android-specific vulns
-- **[iOS](mobile-app-security-ios.md)** - Binary analysis, class-dump, iOS-specific vulns
+- **[Android](./mobile-app-security-android.md)** - APK decompilation, static/dynamic analysis, Android-specific vulns
+- **[iOS](./mobile-app-security-ios.md)** - Binary analysis, class-dump, iOS-specific vulns
 
 **Key Focus Areas (Both Platforms):**
 1. App Installation & Collection
@@ -99,7 +99,7 @@ find /var/containers/Bundle/Application -name "*.app"
 tar -czf app.tar.gz /path/to/app
 ```
 
-See **[Android](mobile-app-security-android.md)** or **[iOS](mobile-app-security-ios.md)** guides for full decompilation steps.
+See **[Android](./mobile-app-security-android.md)** or **[iOS](./mobile-app-security-ios.md)** guides for full decompilation steps.
 
 ---
 
@@ -109,8 +109,8 @@ See **[Android](mobile-app-security-android.md)** or **[iOS](mobile-app-security
 **Objective:** Intercept and analyze app traffic
 
 This works on both Android and iOS. Follow your platform's specific setup:
-- **[Android - Burp Setup](mobile-app-security-android.md#41-burp-suite-proxy-setup)**
-- **[iOS - Burp Setup](mobile-app-security-ios.md#41-burp-suite-proxy-setup)**
+- **[Android - Burp Setup](./mobile-app-security-android.md#41-burp-suite-proxy-setup)**
+- **[iOS - Burp Setup](./mobile-app-security-ios.md#41-burp-suite-proxy-setup)**
 
 ### 4.2 Analyzing API Requests
 **Objective:** Identify API endpoints and test for vulnerabilities
@@ -155,8 +155,8 @@ Testing:
 **Objective:** Bypass certificate pinning to intercept HTTPS
 
 See your platform guide:
-- **[Android - Certificate Pinning Bypass](mobile-app-security-android.md#43-certificate-pinning-bypass)**
-- **[iOS - Certificate Pinning Bypass](mobile-app-security-ios.md#43-certificate-pinning-bypass)**
+- **[Android - Certificate Pinning Bypass](./mobile-app-security-android.md#43-certificate-pinning-bypass)**
+- **[iOS - Certificate Pinning Bypass](./mobile-app-security-ios.md#43-certificate-pinning-bypass)**
 
 ---
 
@@ -253,8 +253,8 @@ echo "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." | cut -d. -f1-2 | base64 -d
 ```
 
 See your platform guide for platform-specific search patterns:
-- **[Android - Crypto Review](mobile-app-security-android.md#71-cryptographic-implementation-review)**
-- **[iOS - Crypto Review](mobile-app-security-ios.md#71-cryptographic-implementation-review)**
+- **[Android - Crypto Review](./mobile-app-security-android.md#71-cryptographic-implementation-review)**
+- **[iOS - Crypto Review](./mobile-app-security-ios.md#71-cryptographic-implementation-review)**
 
 ### 7.2 Key Management Testing
 **Objective:** Verify secure key storage
@@ -275,22 +275,22 @@ See your platform guide for platform-specific search patterns:
 **Objective:** Extract and analyze app data
 
 See your platform guide:
-- **[Android - Data Extraction](mobile-app-security-android.md#91-data-extraction)**
-- **[iOS - Data Extraction](mobile-app-security-ios.md#91-data-extraction)**
+- **[Android - Data Extraction](./mobile-app-security-android.md#91-data-extraction)**
+- **[iOS - Data Extraction](./mobile-app-security-ios.md#91-data-extraction)**
 
 ### 9.2 Memory Forensics
 **Objective:** Extract sensitive data from memory
 
 See your platform guide:
-- **[Android - Memory Forensics](mobile-app-security-android.md#92-memory-forensics)**
-- **[iOS - Memory Forensics](mobile-app-security-ios.md#92-memory-forensics)**
+- **[Android - Memory Forensics](./mobile-app-security-android.md#92-memory-forensics)**
+- **[iOS - Memory Forensics](./mobile-app-security-ios.md#92-memory-forensics)**
 
 ### 9.3 Log Analysis
 **Objective:** Extract sensitive data from logs
 
 See your platform guide:
-- **[Android - Logcat Analysis](mobile-app-security-android.md#93-log-analysis)**
-- **[iOS - Console Analysis](mobile-app-security-ios.md#93-log-analysis)**
+- **[Android - Logcat Analysis](./mobile-app-security-android.md#93-log-analysis)**
+- **[iOS - Console Analysis](./mobile-app-security-ios.md#93-log-analysis)**
 
 ---
 
