@@ -605,16 +605,42 @@ adb shell iptables -t nat -A OUTPUT -p tcp --dport 80 -j DNAT --to-destination <
 # Intercept requests, analyze, modify, forward
 ```
 
-**iOS Configuration (Jailbroken):**
-```bash
-# Install Burp CA certificate
-# 1. Visit http://burp:8080/ on iOS
-# 2. Download & install certificate
-# 3. Trust in Settings → General → About → Certificate Trust Settings
+**iOS Configuration (Stock & Jailbroken):**
 
-# Configure system proxy
-# Settings → WiFi → HTTP Proxy → Manual
-# Enter Burp IP and port
+*Works on both stock iOS and jailbroken devices*
+
+**Step 1: Install Burp CA Certificate**
+```bash
+# On iPhone, open Safari
+# Navigate to: http://<burp-ip>:8080/
+# Download the Burp CA certificate
+# Install when prompted
+
+# Then verify/trust the certificate:
+# Settings → General → About → Certificate Trust Settings
+# Find "PortSwigger CA" and enable trust
+```
+
+**Step 2: Configure WiFi Proxy (Manual)**
+```bash
+# On iPhone:
+# Settings → WiFi → [Select Your Network]
+# Tap the (i) icon next to network name
+# Scroll down to "HTTP Proxy"
+# Select "Manual"
+# Enter:
+#   Server: <burp-ip>  (e.g., 192.168.1.100 if Burp on Kali)
+#   Port: 8080
+# Tap "Save"
+
+# Verify: Traffic should now appear in Burp
+```
+
+**Network Setup Example (Kali VM + iPhone):**
+```
+Kali VM IP: 192.168.1.50
+iPhone WiFi: Connected to same network (192.168.1.x)
+iPhone Proxy Setting: 192.168.1.50:8080
 ```
 
 ### 4.2 Analyzing API Requests
