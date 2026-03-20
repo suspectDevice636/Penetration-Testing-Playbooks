@@ -614,11 +614,18 @@ adb shell iptables -t nat -A OUTPUT -p tcp --dport 80 -j DNAT --to-destination <
 # On iPhone, open Safari
 # Navigate to: http://<burp-ip>:8080/
 # Download the Burp CA certificate
-# Install when prompted
+# Install when prompted (will redirect to profiles/device management)
 
 # Then verify/trust the certificate:
-# Settings → General → About → Certificate Trust Settings
-# Find "PortSwigger CA" and enable trust
+# 
+# iOS 18.x (18.3.2+):
+#   Settings → General → VPN & Device Management
+#   Find "PortSwigger" certificate
+#   Tap it and verify it shows as "Trusted"
+#
+# iOS 17.x and earlier:
+#   Settings → General → About → Certificate Trust Settings
+#   Find "PortSwigger CA" and toggle trust ON
 ```
 
 **Step 2: Configure WiFi Proxy (Manual)**
