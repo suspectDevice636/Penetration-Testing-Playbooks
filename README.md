@@ -49,6 +49,8 @@ Each playbook follows a consistent structure:
 
 ### 🕵️ OSINT & Attribution
 - **[OSINT & Attribution](07-OSINT/osint-attribution-playbook.md)** — Open-source intelligence gathering, target reconnaissance, footprinting, identity correlation
+- **[Information Gathering](07-OSINT/01-information-gathering.md)** — WSTG-INFO testing (web server fingerprinting, metadata enumeration, application discovery)
+- **[Configuration & Deployment Analysis](07-OSINT/02-configuration-deployment.md)** — WSTG-CONF testing (network infrastructure, platform configuration, management interfaces)
 
 ### 📋 Compliance & Standards
 - **[PCI-DSS Testing](08-Compliance/pci-dss-pentesting-playbook.md)** — PCI-DSS compliance assessment, cardholder data protection, payment system security
