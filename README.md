@@ -33,6 +33,7 @@ Each playbook follows a consistent structure:
 
 ### 🔌 APIs
 - **[API Security Testing](02-APIs/api-pentesting-playbook.md)** — REST/GraphQL API enumeration, authentication bypass, rate limiting, injection attacks, IDOR
+- **[GraphQL API Testing](02-APIs/03-graphql-api-testing.md)** — GraphQL-specific vulnerabilities, introspection attacks, query depth exploitation, alias injection, batch query attacks
 
 ### 🌍 Network & Infrastructure
 - **[Network Pentesting](03-Network-Infrastructure/network-infrastructure-pentesting-playbook.md)** — Nmap scanning, service enumeration, exploitation, lateral movement, privilege escalation
