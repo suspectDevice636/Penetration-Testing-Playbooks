@@ -30,7 +30,6 @@ Each playbook follows a consistent structure:
 - **[WSTG Playbook (Expanded)](01-Web-Applications/WSTG-Playbook-Expanded.md)** — OWASP Web Security Testing Guide with 102 practical test procedures across 12 categories
 - **[Web App Penetration Testing](01-Web-Applications/webapp-pentesting-playbook.md)** — Complete web application testing methodology (authentication, authorization, injection, XSS, CSRF, etc.)
 - **[Web App Quick Reference](01-Web-Applications/webapp-pentesting-quick-reference.md)** — Condensed cheat sheet for quick lookups during engagements
-- **[Chatbot & Prompt Injection](01-Web-Applications/Chatbot-Prompt-Injection-Playbook.md)** — AI/LLM security testing (prompt injection, model extraction, jailbreaks, etc.)
 
 ### 🔌 APIs
 - **[API Security Testing](02-APIs/api-pentesting-playbook.md)** — REST/GraphQL API enumeration, authentication bypass, rate limiting, injection attacks, IDOR
@@ -54,6 +53,9 @@ Each playbook follows a consistent structure:
 - **[PCI-DSS Testing](08-Compliance/pci-dss-pentesting-playbook.md)** — PCI-DSS compliance assessment, cardholder data protection, payment system security
 - **[PCI-DSS Web App Quick Reference](08-Compliance/pci-webapp-pentesting-playbook.md)** — Focused quick-reference for web app & API pentesting with PCI compliance (commands + expected outputs)
 
+### 🤖 AI & Large Language Models
+- **[Chatbot & Prompt Injection](09-AI-LLM/Chatbot-Prompt-Injection-Playbook.md)** — OWASP GenAI Top 10 security testing (prompt injection, direct context extraction, model extraction, jailbreaks, RAG attacks, plugin exploitation, training data poisoning)
+
 ---
 
 ## Category Overview
@@ -68,6 +70,7 @@ Each playbook follows a consistent structure:
 | IoT/Embedded | Hardware, firmware, protocols | Device security testing |
 | OSINT | Information gathering, reconnaissance | Passive reconnaissance phase |
 | Compliance | PCI-DSS, HIPAA alignment, audit readiness | Compliance-driven testing |
+| AI & LLMs | OWASP GenAI Top 10, prompt injection, model extraction | LLM/chatbot security testing |
 
 ---
 
@@ -87,6 +90,7 @@ Each playbook follows a consistent structure:
 - **What payload works for XSS?** → Search in [WSTG-Playbook-Expanded.md](01-Web-Applications/WSTG-Playbook-Expanded.md) for "XSS"
 - **API IDOR patterns?** → See [api-pentesting-playbook.md](02-APIs/api-pentesting-playbook.md#idor)
 - **AWS bucket enumeration?** → See [cloud-aws-pentesting-playbook.md](04-Cloud/cloud-aws-pentesting-playbook.md)
+- **LLM/Chatbot security?** → See [Chatbot-Prompt-Injection-Playbook.md](09-AI-LLM/Chatbot-Prompt-Injection-Playbook.md) with OWASP GenAI Top 10 coverage
 
 ### Search Across All Playbooks
 
