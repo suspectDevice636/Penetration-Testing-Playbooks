@@ -29,6 +29,7 @@ Each playbook follows a consistent structure:
 ### 🌐 Web Applications
 - **[WSTG Playbook (Expanded)](01-Web-Applications/WSTG-Playbook-Expanded.md)** — OWASP Web Security Testing Guide with 102 practical test procedures across 12 categories
 - **[Web App Penetration Testing](01-Web-Applications/webapp-pentesting-playbook.md)** — Complete web application testing methodology (authentication, authorization, injection, XSS, CSRF, etc.)
+- **[Burp Suite Pro WSTG Workflow](01-Web-Applications/burp-pro-wstg-workflow.md)** — Interactive web app testing using Burp Pro, mapped to WSTG phases (10 phases, automated + manual testing)
 - **[Web App Quick Reference](01-Web-Applications/webapp-pentesting-quick-reference.md)** — Condensed cheat sheet for quick lookups during engagements
 
 ### 🔌 APIs
@@ -90,6 +91,7 @@ Each playbook follows a consistent structure:
 ### As a Reference
 
 - **Web app quick ref?** → Open [webapp-pentesting-quick-reference.md](01-Web-Applications/webapp-pentesting-quick-reference.md)
+- **Testing with Burp Pro?** → See [burp-pro-wstg-workflow.md](01-Web-Applications/burp-pro-wstg-workflow.md) for step-by-step Burp methodology
 - **What payload works for XSS?** → Search in [WSTG-Playbook-Expanded.md](01-Web-Applications/WSTG-Playbook-Expanded.md) for "XSS"
 - **API IDOR patterns?** → See [api-pentesting-playbook.md](02-APIs/api-pentesting-playbook.md#idor)
 - **AWS bucket enumeration?** → See [cloud-aws-pentesting-playbook.md](04-Cloud/cloud-aws-pentesting-playbook.md)
