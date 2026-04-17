@@ -148,7 +148,6 @@ All notable changes to the Chatbot & Prompt Injection Pentesting Playbook will b
 
 ### 📝 What Changed from 2.1
 
-- **Content Growth:** 4,000 lines → ~8,500 lines
 - **New Sections:** 4 major, 8 supplementary
 - **Expanded Sections:** 6 sections significantly expanded
 - **Code Examples:** 20+ new payload examples + Python testing framework

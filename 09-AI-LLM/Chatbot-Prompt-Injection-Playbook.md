@@ -842,33 +842,33 @@ Direct Context Extraction attacks bypass traditional prompt injection techniques
 
 ## Testing Methodology
 
-### Phase 1: Reconnaissance (30-60 minutes)
+### Phase 1: Reconnaissance
 1. Identify chatbot presence and endpoint
 2. Enumerate capabilities and limitations
 3. Determine underlying model/framework
 4. Document response patterns and behavior
 5. Identify available functions/plugins
 
-### Phase 2: Basic Injection (60-90 minutes)
+### Phase 2: Basic Injection
 1. Attempt direct system prompt extraction
 2. Test instruction override techniques
 3. Try basic role assumption
 4. Document what works and what's blocked
 
-### Phase 3: Advanced Exploitation (90-120 minutes)
+### Phase 3: Advanced Exploitation
 1. Test information disclosure vectors
 2. Attempt configuration/credential leakage
 3. Bypass filters with obfuscation
 4. Test multi-turn exploitation chains
 5. Social engineering & affinity attacks
 
-### Phase 4: Integration Testing (60-90 minutes)
+### Phase 4: Integration Testing
 1. Test plugin/function exploitation
 2. Attempt code injection
 3. Test indirect prompt injection
 4. Verify data leakage via integrations
 
-### Phase 5: Documentation & Reporting (60-90 minutes)
+### Phase 5: Documentation & Reporting
 1. Compile findings with evidence
 2. Create reproducible test cases
 3. Document impact and severity
