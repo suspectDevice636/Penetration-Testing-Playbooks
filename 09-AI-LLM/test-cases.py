@@ -11,7 +11,7 @@ Usage:
 Requirements:
     pip install requests --break-system-packages
 
-Author: Security Research Team
+Author: suspectDevice
 Version: 3.0
 Date: 2026-04-16
 """
