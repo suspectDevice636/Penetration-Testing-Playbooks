@@ -4,7 +4,7 @@ All notable changes to the Chatbot & Prompt Injection Pentesting Playbook will b
 
 **Current Version:** 3.0  
 **Last Updated:** 2026-04-16  
-**Maintainer:** Security Research Team
+**Maintainer:** suspectDevice
 
 ---
 
