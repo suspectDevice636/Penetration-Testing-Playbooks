@@ -15,8 +15,7 @@
 - **[🛠️ Tools & Automation](#tools--automation)** — Testing frameworks
 - **[📋 Payloads Database](#payloads-database)** — Organized test vectors
 - **[🔍 Testing Examples](#testing-examples)** — Real-world scenarios
-- **[🚀 Quick Start](#quick-start)** — 5-minute setup
-- **[📖 Documentation](#documentation)** — All guides
+- **[🚀 Quick Start](#quick-start)** - **[📖 Documentation](#documentation)** — All guides
 
 ---
 
@@ -56,7 +55,6 @@ Comprehensive pentesting and security assessment guide for **chatbots, AI assist
 4. **Use the tools section** to automate testing (30 min)
 5. **Document findings** using the report template (30 min)
 
-**Time estimate:** 2-4 hours for full assessment
 
 ### For Developers/Security Teams
 
@@ -99,7 +97,6 @@ Comprehensive pentesting and security assessment guide for **chatbots, AI assist
 | 14 | **Advanced Plugin & Integration Attacks** (NEW) | 60-90 min |
 | 15 | **Jailbreak Detection & Evasion** (NEW) | 45-60 min |
 
-**Total:** ~780-1080 minutes (13-18 hours for complete coverage)
 
 ### Testing Phases
 
@@ -189,7 +186,7 @@ Comprehensive pentesting and security assessment guide for **chatbots, AI assist
 
 ## Testing Examples
 
-### Example 1: Quick Assessment (30 minutes)
+### Example 1: Quick Assessment
 
 **Goal:** Determine if basic prompt injection works
 
@@ -215,7 +212,7 @@ curl -X POST https://chatbot.example.com/api/message \
 - If bot changes behavior → **MEDIUM/HIGH finding**
 - If no response → **Maybe protected, dig deeper**
 
-### Example 2: Automated Testing (1 hour)
+### Example 2: Automated Testing
 
 ```bash
 # 1. Install framework
@@ -241,7 +238,7 @@ cat security_findings.json | jq '.summary'
 }
 ```
 
-### Example 3: Model-Specific Testing (2 hours)
+### Example 3: Model-Specific Testing
 
 See **Section 8 (Model-Specific Vulnerabilities)** for:
 - OpenAI ChatGPT/GPT-4 specific tests
@@ -253,7 +250,7 @@ See **Section 8 (Model-Specific Vulnerabilities)** for:
 
 ## Quick Start
 
-### 5-Minute Setup
+### Quick Setup
 
 ```bash
 # 1. Clone or download this section
@@ -313,7 +310,7 @@ python test-cases.py \
 - Testing Methodology → Phase 1-2 (20 min)
 
 **For Comprehensive Testing:**
-- All 15 sections (read strategically, ~2-3 hours)
+- All 15 sections
 - Testing Methodology → All 6 phases
 - Tools section + Automated testing setup
 
@@ -332,8 +329,7 @@ python test-cases.py \
 2. Use: Payloads from categories 1-10 (more likely to work)
 3. Tools: Promptfoo or our Python framework
 4. Expected: 60% detection rate with basic techniques
-5. Time: 1-2 hours for thorough assessment
-
+5. 
 ### Scenario 2: "We just deployed a Claude-powered app"
 
 1. Read: Section 8.2 (Claude specific exploits)
@@ -341,8 +337,7 @@ python test-cases.py \
 3. Focus: Sections 4, 6 (DCE, plugin exploitation)
 4. Tools: Manual testing + custom payloads
 5. Expected: Fewer vulnerabilities, more sophisticated needed
-6. Time: 3-4 hours for thorough assessment
-
+6. 
 ### Scenario 3: "Need to implement security fixes"
 
 1. Read: Remediation Checklist (priority-ordered)
@@ -359,8 +354,7 @@ python test-cases.py \
 3. Execute: 1-2 weeks for comprehensive assessment
 4. Document: Generate professional report
 5. Follow-up: Quarterly regression testing
-6. Time: 40-60 hours for initial + ongoing monitoring
-
+6. 
 ---
 
 ## OWASP LLM Top 10 Alignment
@@ -471,12 +465,12 @@ If you discover vulnerabilities:
 
 ## Quick Reference
 
-### For Busy Security Professionals
+### Quick Navigation by Scope
 
-**I have 30 minutes:**
+**Minimal Coverage:**
 → Phase 1 (Reconnaissance) + Section 1-2
 
-**I have 2 hours:**
+**Standard Coverage:**
 → Phases 1-2 + Sections 1-6 + run automated tests
 
 **I have a day:**
