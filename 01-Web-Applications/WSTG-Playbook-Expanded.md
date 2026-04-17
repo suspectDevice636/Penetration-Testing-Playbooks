@@ -4,7 +4,7 @@
 
 ## 1. Information Gathering
 
-### WSTG-INFO-02 | Fingerprint Web Server | ***Pending***
+### WSTG-INFO-02 | Fingerprint Web Server
 
 **Description:** Identify the web server type, version, and runtime environment to discover known vulnerabilities. This helps map the attack surface and informs exploit selection.
 
@@ -35,7 +35,7 @@ or any version disclosure in headers
 
 ---
 
-### WSTG-INFO-03 | Review Webserver Metafiles for Information Leakage | ***Pending***
+### WSTG-INFO-03 | Review Webserver Metafiles for Information Leakage
 
 **Description:** Check for exposed metafiles (robots.txt, sitemap.xml, .well-known files) that may reveal hidden paths, sensitive endpoints, or admin interfaces. These files often leak application structure and sensitive paths.
 
@@ -66,7 +66,7 @@ Paths that shouldn't be disclosed or reveal sensitive directories
 
 ---
 
-### WSTG-INFO-05 | Review Webpage Content for Information Leakage | ***Pending***
+### WSTG-INFO-05 | Review Webpage Content for Information Leakage
 
 **Description:** Analyze HTML comments, JavaScript files, and page source for secrets, API keys, internal paths, or developer notes. Unscripted source code often contains hardcoded credentials or sensitive information.
 
@@ -100,7 +100,7 @@ const API_KEY = "sk-1234567890abcdef";
 
 ---
 
-### WSTG-INFO-06 | Identify Application Entry Points | ***Pending***
+### WSTG-INFO-06 | Identify Application Entry Points
 
 **Description:** Map all input vectors (forms, API endpoints, headers, URL parameters) and output points where user data flows into the application. This establishes the attack surface.
 
@@ -132,7 +132,7 @@ GET /api/user/{id}  # IDOR potential
 
 ---
 
-### WSTG-INFO-07 | Map Execution Paths Through Application | ***Pending***
+### WSTG-INFO-07 | Map Execution Paths Through Application
 
 **Description:** Document the flow of legitimate user requests through the application (login → dashboard → data retrieval). Understand state changes, redirects, and backend interactions to identify state management weaknesses.
 
@@ -163,7 +163,7 @@ curl -b cookies.txt https://target.com/dashboard
 
 ---
 
-### WSTG-INFO-08 | Fingerprint Web Application Framework | ***Pending***
+### WSTG-INFO-08 | Fingerprint Web Application Framework
 
 **Description:** Identify the framework (Rails, Django, Spring, etc.) by analyzing HTTP headers, error messages, file structure, and common endpoint patterns. Framework knowledge enables targeted exploitation.
 
@@ -200,7 +200,7 @@ Server: WEBrick/1.3.1 (Ruby)
 
 ## 2. Configuration and Deployment Management Testing
 
-### WSTG-CONF-01 | Test Network Infrastructure Configuration | ***Pending***
+### WSTG-CONF-01 | Test Network Infrastructure Configuration
 
 **Description:** Verify network segmentation, firewall rules, and server isolation. Weak configuration may allow lateral movement or access to internal services.
 
@@ -230,7 +230,7 @@ X-Forwarded-For: 192.168.1.100  # Internal IP disclosed
 
 ---
 
-### WSTG-CONF-02 | Test Application Platform Configuration | ***Pending***
+### WSTG-CONF-02 | Test Application Platform Configuration
 
 **Description:** Verify secure defaults in application server configuration (debug mode disabled, error details hidden, CORS configured). Misconfiguration often exposes debug info or functionality.
 
@@ -264,7 +264,7 @@ Database connection string exposed in error
 
 ---
 
-### WSTG-CONF-03 | Test File Extensions Handling for Sensitive Information | ***Pending***
+### WSTG-CONF-03 | Test File Extensions Handling for Sensitive Information
 
 **Description:** Test if the server mishandles file extensions (.php, .bak, .old, .tmp, .swp) which may leak source code or reveal unintended file access.
 
@@ -299,7 +299,7 @@ $db_pass = "secret_password";
 
 ---
 
-### WSTG-CONF-04 | Review Old Backup and Unreferenced Files for Sensitive Information | ***Pending***
+### WSTG-CONF-04 | Review Old Backup and Unreferenced Files for Sensitive Information
 
 **Description:** Search for backup files (.bak, .backup, .sql, .zip, .tar.gz) and unreferenced files that may contain source code, credentials, or sensitive data.
 
@@ -336,7 +336,7 @@ git commit history with secrets
 
 ---
 
-### WSTG-CONF-05 | Enumerate Infrastructure and Application Admin Interfaces | ***Pending***
+### WSTG-CONF-05 | Enumerate Infrastructure and Application Admin Interfaces
 
 **Description:** Discover hidden admin panels, control dashboards, and privileged interfaces that may have weaker security or default credentials.
 
@@ -369,7 +369,7 @@ HTTP 401 /api/admin (may be bypassable)
 
 ---
 
-### WSTG-CONF-06 | Test HTTP Methods | ***Pending***
+### WSTG-CONF-06 | Test HTTP Methods
 
 **Description:** Verify that unnecessary HTTP methods (PUT, DELETE, TRACE, CONNECT) are disabled. Enabled methods may allow file upload, deletion, or request smuggling attacks.
 
@@ -404,7 +404,7 @@ or successful PUT/DELETE responses
 
 ---
 
-### WSTG-CONF-07 | Test HTTP Strict Transport Security | ***Pending***
+### WSTG-CONF-07 | Test HTTP Strict Transport Security
 
 **Description:** Verify HSTS header is present and properly configured to enforce HTTPS. Missing or misconfigured HSTS allows downgrade attacks (HTTP ➜ HTTPS).
 
@@ -435,7 +435,7 @@ Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
 
 ---
 
-### WSTG-CONF-08 | Test RIA Cross Domain Policy | ***Pending***
+### WSTG-CONF-08 | Test RIA Cross Domain Policy
 
 **Description:** Review crossdomain.xml and clientaccesspolicy.xml for overly permissive CORS/domain policies that allow unauthorized cross-domain requests.
 
@@ -473,7 +473,7 @@ Access-Control-Allow-Credentials: true  <!-- dangerous combo -->
 
 ---
 
-### WSTG-CONF-09 | Test File Permission | ***Pending***
+### WSTG-CONF-09 | Test File Permission
 
 **Description:** Verify file and directory permissions on the server. Overly permissive permissions may allow unauthorized file read/write or privilege escalation.
 
@@ -506,7 +506,7 @@ drwxrwxrwx /uploads       # Writable by any user
 
 ---
 
-### WSTG-CONF-11 | Test Cloud Storage | ***Pending***
+### WSTG-CONF-11 | Test Cloud Storage
 
 **Description:** Identify and test cloud storage buckets (S3, Azure Blob, GCS) for misconfigured access controls. Public or unprotected buckets expose sensitive data.
 
@@ -545,7 +545,7 @@ bucket-stream
 
 ---
 
-### WSTG-CONF-12 | Testing for Content Security Policy | ***Pending***
+### WSTG-CONF-12 | Testing for Content Security Policy
 
 **Description:** Verify CSP header is present and restrictive enough to prevent XSS attacks. Weak or missing CSP allows inline scripts and arbitrary resource loading.
 
@@ -582,7 +582,7 @@ Content-Security-Policy: default-src 'self' 'unsafe-inline' 'unsafe-eval'
 
 ## 3. Identity Management Testing
 
-### WSTG-IDNT-01 | Test Role Definitions | ***Pending***
+### WSTG-IDNT-01 | Test Role Definitions
 
 **Description:** Verify role-based access control (RBAC) is properly enforced. Test if users can access functions beyond their assigned role (privilege escalation).
 
@@ -616,7 +616,7 @@ User list downloaded despite being a regular user
 
 ---
 
-### WSTG-IDNT-02 | Test User Registration Process | ***Pending***
+### WSTG-IDNT-02 | Test User Registration Process
 
 **Description:** Verify registration validation, email verification, and account lockout. Weak registration allows account takeover, enumeration, or spam.
 
@@ -656,7 +656,7 @@ Different error for existing email vs new email (enumeration)
 
 ---
 
-### WSTG-IDNT-03 | Test Account Provisioning Process | ***Pending***
+### WSTG-IDNT-03 | Test Account Provisioning Process
 
 **Description:** Verify account creation workflows and access provisioning. Test for privilege escalation during account setup or missing authorization checks.
 
@@ -689,7 +689,7 @@ User assigned to high-privilege roles without approval
 
 ---
 
-### WSTG-IDNT-04 | Testing for Account Enumeration and Guessable User Account | ***Pending***
+### WSTG-IDNT-04 | Testing for Account Enumeration and Guessable User Account
 
 **Description:** Test if the application leaks user existence through registration errors, login responses, or password reset functions. Enumeration enables targeted attacks.
 
@@ -728,7 +728,7 @@ Default admin account accessible
 
 ---
 
-### WSTG-IDNT-05 | Testing for Weak or Unenforced Username Policy | ***Pending***
+### WSTG-IDNT-05 | Testing for Weak or Unenforced Username Policy
 
 **Description:** Verify username constraints (length, format, uniqueness). Weak policies allow account takeover, username squatting, or impersonation.
 
@@ -772,7 +772,7 @@ Duplicate usernames allowed
 
 ## 4. Authentication Testing
 
-### WSTG-ATHN-01 | Testing for Credentials Transported over an Encrypted Channel | ***Pending***
+### WSTG-ATHN-01 | Testing for Credentials Transported over an Encrypted Channel
 
 **Description:** Verify login credentials are transmitted over HTTPS/TLS. Credentials sent over HTTP are susceptible to interception and man-in-the-middle attacks.
 
@@ -805,7 +805,7 @@ Credentials transmitted in plaintext
 
 ---
 
-### WSTG-ATHN-02 | Testing for Default Credentials | ***Pending***
+### WSTG-ATHN-02 | Testing for Default Credentials
 
 **Description:** Test for default/hardcoded credentials in application interfaces, APIs, and common services. Default credentials are often overlooked in production.
 
@@ -840,7 +840,7 @@ curl: (7) Failed to connect  (but service running on default port)
 
 ---
 
-### WSTG-ATHN-03 | Testing for Weak Lock Out Mechanism | ***Pending***
+### WSTG-ATHN-03 | Testing for Weak Lock Out Mechanism
 
 **Description:** Verify account lockout after failed login attempts. Missing or weak lockout allows brute force attacks to succeed.
 
@@ -879,7 +879,7 @@ Lockout bypassed from different IP
 
 ---
 
-### WSTG-ATHN-04 | Testing for Bypassing Authentication Schema | ***Pending***
+### WSTG-ATHN-04 | Testing for Bypassing Authentication Schema
 
 **Description:** Test for authentication bypass vulnerabilities (SQL injection, logic flaws, missing checks). Bypass allows unauthorized access without valid credentials.
 
@@ -918,7 +918,7 @@ User ID extracted from response
 
 ---
 
-### WSTG-ATHN-05 | Testing for Vulnerable Remember Password | ***Pending***
+### WSTG-ATHN-05 | Testing for Vulnerable Remember Password
 
 **Description:** Test "remember me" functionality for weak token generation or storage. Predictable tokens can be forged to hijack accounts.
 
@@ -959,7 +959,7 @@ Same token across multiple devices
 
 ---
 
-### WSTG-ATHN-06 | Testing for Browser Cache Weaknesses | ***Pending***
+### WSTG-ATHN-06 | Testing for Browser Cache Weaknesses
 
 **Description:** Verify sensitive pages aren't cached by the browser. Unprotected cache allows other users on shared machines to access previous user's data.
 
@@ -998,7 +998,7 @@ Sensitive data accessible from back button
 
 ---
 
-### WSTG-ATHN-07 | Testing for Weak Password Policy | ***Pending***
+### WSTG-ATHN-07 | Testing for Weak Password Policy
 
 **Description:** Verify password complexity requirements (length, character types). Weak policies allow easy password guessing.
 
@@ -1040,7 +1040,7 @@ No password history enforcement
 
 ---
 
-### WSTG-ATHN-08 | Testing for Weak Security Question Answer | ***Pending***
+### WSTG-ATHN-08 | Testing for Weak Security Question Answer
 
 **Description:** Test security questions for predictable answers or insufficient entropy. Weak questions can be brute forced or guessed.
 
@@ -1084,7 +1084,7 @@ No rate limiting on answer attempts
 
 ---
 
-### WSTG-ATHN-09 | Testing for Weak Password Change or Reset Functionalities | ***Pending***
+### WSTG-ATHN-09 | Testing for Weak Password Change or Reset Functionalities
 
 **Description:** Test password change/reset for missing authentication checks or weak token generation. Flawed processes allow account takeover.
 
@@ -1127,7 +1127,7 @@ Password reset succeeds for other users
 
 ---
 
-### WSTG-ATHN-10 | Testing for Weaker Authentication in Alternative Channel | ***Pending***
+### WSTG-ATHN-10 | Testing for Weaker Authentication in Alternative Channel
 
 **Description:** Verify alternate authentication methods (SMS, email, social login) have equivalent security. Attackers may use weaker alternatives to bypass strong authentication.
 
@@ -1170,7 +1170,7 @@ Same session token across channels
 
 ## 5. Authorization Testing
 
-### WSTG-ATHZ-01 | Testing Directory Traversal File Include | ***Pending***
+### WSTG-ATHZ-01 | Testing Directory Traversal File Include
 
 **Description:** Test for path traversal vulnerabilities allowing access to files outside intended directory. Attackers can read system files (/etc/passwd, config files, source code).
 
@@ -1209,7 +1209,7 @@ or config file contents, log entries
 
 ---
 
-### WSTG-ATHZ-02 | Testing for Bypassing Authorization Schema | ***Pending***
+### WSTG-ATHZ-02 | Testing for Bypassing Authorization Schema
 
 **Description:** Test for authorization bypass (IDOR, parameter tampering, role manipulation). Authorization bypass allows access to restricted resources.
 
@@ -1251,7 +1251,7 @@ Admin API accessible with user role
 
 ---
 
-### WSTG-ATHZ-03 | Testing for Privilege Escalation | ***Pending***
+### WSTG-ATHZ-03 | Testing for Privilege Escalation
 
 **Description:** Test if low-privilege users can escalate to higher privileges (admin, manager). Privilege escalation enables full application takeover.
 
@@ -1295,7 +1295,7 @@ Admin account password changed
 
 ---
 
-### WSTG-ATHZ-04 | Testing for Insecure Direct Object References | ***Pending***
+### WSTG-ATHZ-04 | Testing for Insecure Direct Object References
 
 **Description:** Test if application exposes internal object references without proper authorization. Attackers can enumerate or modify objects by changing IDs.
 
@@ -1340,7 +1340,7 @@ Invoice/document data from other customers
 
 ## 6. Session Management Testing
 
-### WSTG-SESS-01 | Testing for Session Management Schema | ***Pending***
+### WSTG-SESS-01 | Testing for Session Management Schema
 
 **Description:** Verify session token generation uses strong randomness and cannot be predicted. Weak tokens allow session hijacking.
 
@@ -1381,7 +1381,7 @@ Token valid after logout
 
 ---
 
-### WSTG-SESS-02 | Testing for Cookies Attributes | ***Pending***
+### WSTG-SESS-02 | Testing for Cookies Attributes
 
 **Description:** Verify session cookies have secure attributes (HttpOnly, Secure, SameSite). Missing attributes allow XSS or CSRF attacks.
 
@@ -1419,7 +1419,7 @@ Set-Cookie: session=abc123; Domain=.target.com  (Overly broad domain)
 
 ---
 
-### WSTG-SESS-03 | Testing for Session Fixation | ***Pending***
+### WSTG-SESS-03 | Testing for Session Fixation
 
 **Description:** Test if session token is regenerated after authentication. Failure allows attackers to hijack sessions by fixing the token before login.
 
@@ -1461,7 +1461,7 @@ Dashboard accessible with pre-login token
 
 ---
 
-### WSTG-SESS-04 | Testing for Exposed Session Variables | ***Pending***
+### WSTG-SESS-04 | Testing for Exposed Session Variables
 
 **Description:** Verify session tokens aren't exposed in URLs, logs, or error messages. Exposed tokens can be harvested from browser history, logs, or referers.
 
@@ -1500,7 +1500,7 @@ Session in server logs unencrypted
 
 ---
 
-### WSTG-SESS-05 | Testing for Cross Site Request Forgery | ***Pending***
+### WSTG-SESS-05 | Testing for Cross Site Request Forgery
 
 **Description:** Test if application validates request origin to prevent CSRF attacks. Missing CSRF protection allows attackers to perform actions on behalf of authenticated users.
 
@@ -1541,7 +1541,7 @@ No SameSite attribute on cookies
 
 ---
 
-### WSTG-SESS-06 | Testing for Logout Functionality | ***Pending***
+### WSTG-SESS-06 | Testing for Logout Functionality
 
 **Description:** Verify logout properly invalidates session tokens. Incomplete logout allows session reuse after logout.
 
@@ -1579,7 +1579,7 @@ Redirect to arbitrary URL
 
 ---
 
-### WSTG-SESS-07 | Testing Session Timeout | ***Pending***
+### WSTG-SESS-07 | Testing Session Timeout
 
 **Description:** Verify sessions expire after inactivity. Indefinite sessions allow attackers to use abandoned sessions.
 
@@ -1620,7 +1620,7 @@ No timeout configured
 
 ---
 
-### WSTG-SESS-08 | Testing for Session Puzzling | ***Pending***
+### WSTG-SESS-08 | Testing for Session Puzzling
 
 **Description:** Test if application properly manages session state across login/logout/re-login cycles. Confused session state can lead to privilege escalation.
 
@@ -1660,7 +1660,7 @@ User1 + User2 attributes mixed in single session
 
 ---
 
-### WSTG-SESS-09 | Testing for Session Hijacking | ***Pending***
+### WSTG-SESS-09 | Testing for Session Hijacking
 
 **Description:** Test if attackers can steal or predict session tokens to impersonate users. Session hijacking leads to complete account takeover.
 
@@ -1701,7 +1701,7 @@ Cleartext token over HTTP
 
 ---
 
-### WSTG-SESS-10 | Testing JSON Web Tokens | ***Pending***
+### WSTG-SESS-10 | Testing JSON Web Tokens
 
 **Description:** Test JWT for weak signature verification, algorithm confusion, or tampering. Flawed JWT implementation allows token forgery.
 
@@ -1746,7 +1746,7 @@ Expired JWT still valid
 
 ## 7. Input Validation Testing
 
-### WSTG-INPV-01 | Testing for Reflected Cross Site Scripting | ***Pending***
+### WSTG-INPV-01 | Testing for Reflected Cross Site Scripting
 
 **Description:** Test if user input is reflected in responses without sanitization. Unescaped reflection allows JavaScript execution in victim's browser.
 
@@ -1785,7 +1785,7 @@ Event handlers triggered
 
 ---
 
-### WSTG-INPV-02 | Testing for Stored Cross Site Scripting | ***Pending***
+### WSTG-INPV-02 | Testing for Stored Cross Site Scripting
 
 **Description:** Test if user input is stored and later executed. Stored XSS affects all users who view the malicious content.
 
@@ -1829,7 +1829,7 @@ Stored in multiple fields (title, bio, comments)
 
 ---
 
-### WSTG-INPV-04 | Testing for HTTP Parameter Pollution | ***Pending***
+### WSTG-INPV-04 | Testing for HTTP Parameter Pollution
 
 **Description:** Test if application mishandles duplicate parameters. Different servers parse parameters differently, allowing bypasses.
 
@@ -1868,7 +1868,7 @@ Filter bypass via parameter pollution
 
 ---
 
-### WSTG-INPV-05 | Testing for SQL Injection | ***Pending***
+### WSTG-INPV-05 | Testing for SQL Injection
 
 **Description:** Test for SQL injection by providing SQL metacharacters. SQL injection allows database access, data exfiltration, or authentication bypass.
 
@@ -1911,7 +1911,7 @@ Authentication bypass
 
 ---
 
-### WSTG-INPV-06 | Testing for LDAP Injection | ***Pending***
+### WSTG-INPV-06 | Testing for LDAP Injection
 
 **Description:** Test LDAP queries for injection. LDAP injection allows authentication bypass or directory enumeration.
 
@@ -1950,7 +1950,7 @@ Directory traversal in LDAP
 
 ---
 
-### WSTG-INPV-07 | Testing for XML Injection | ***Pending***
+### WSTG-INPV-07 | Testing for XML Injection
 
 **Description:** Test XML parsers for XXE (XML External Entity) attacks. XXE allows file read, SSRF, or DoS.
 
@@ -2000,7 +2000,7 @@ Server hangs or times out (DoS)
 
 ---
 
-### WSTG-INPV-08 | Testing for SSI Injection | ***Pending***
+### WSTG-INPV-08 | Testing for SSI Injection
 
 **Description:** Test if Server-Side Includes (SSI) are enabled and user input can be injected. SSI injection allows command execution.
 
@@ -2041,7 +2041,7 @@ User-Agent output reflected
 
 ---
 
-### WSTG-INPV-09 | Testing for XPath Injection | ***Pending***
+### WSTG-INPV-09 | Testing for XPath Injection
 
 **Description:** Test XPath queries for injection. XPath injection allows XML node enumeration or authentication bypass.
 
@@ -2081,7 +2081,7 @@ Node names/values enumerated
 
 ---
 
-### WSTG-INPV-10 | Testing for IMAP SMTP Injection | ***Pending***
+### WSTG-INPV-10 | Testing for IMAP SMTP Injection
 
 **Description:** Test email functionality for IMAP/SMTP header injection. Header injection allows email spoofing or cross-site scripting.
 
@@ -2118,7 +2118,7 @@ Folder traversal via injection
 
 ---
 
-### WSTG-INPV-11 | Testing for Code Injection | ***Pending***
+### WSTG-INPV-11 | Testing for Code Injection
 
 **Description:** Test if user input can be injected into code execution contexts. Code injection allows remote command execution.
 
@@ -2159,7 +2159,7 @@ Code execution context
 
 ---
 
-### WSTG-INPV-12 | Testing for Command Injection | ***Pending***
+### WSTG-INPV-12 | Testing for Command Injection
 
 **Description:** Test if user input can be injected into OS commands. Command injection allows arbitrary command execution.
 
@@ -2199,7 +2199,7 @@ Reverse shell established
 
 ---
 
-### WSTG-INPV-13 | Testing for Format String Injection | ***Pending***
+### WSTG-INPV-13 | Testing for Format String Injection
 
 **Description:** Test for format string vulnerabilities in printf-like functions. Format string bugs allow memory read/write and code execution.
 
@@ -2238,7 +2238,7 @@ Data written to memory
 
 ---
 
-### WSTG-INPV-14 | Testing for Incubated Vulnerability | ***Pending***
+### WSTG-INPV-14 | Testing for Incubated Vulnerability
 
 **Description:** Test for vulnerabilities that manifest after a delay or specific conditions. Incubated vulnerabilities may not appear immediately during input testing.
 
@@ -2277,7 +2277,7 @@ Conditional code triggered
 
 ---
 
-### WSTG-INPV-15 | Testing for HTTP Splitting Smuggling | ***Pending***
+### WSTG-INPV-15 | Testing for HTTP Splitting Smuggling
 
 **Description:** Test for HTTP request smuggling and response splitting. These attacks exploit parser differences between proxies and servers.
 
@@ -2315,7 +2315,7 @@ Poison cache with malicious response
 
 ---
 
-### WSTG-INPV-16 | Testing for HTTP Incoming Requests | ***Pending***
+### WSTG-INPV-16 | Testing for HTTP Incoming Requests
 
 **Description:** Test how application handles malformed or unusual HTTP requests. Robust handling is important for security.
 
@@ -2357,7 +2357,7 @@ Multiple headers cause confusion
 
 ---
 
-### WSTG-INPV-17 | Testing for Host Header Injection | ***Pending***
+### WSTG-INPV-17 | Testing for Host Header Injection
 
 **Description:** Test if application trusts Host header. Attacker-controlled Host can cause cache poisoning or password reset to wrong domain.
 
@@ -2398,7 +2398,7 @@ Cache poisoning with attacker domain
 
 ---
 
-### WSTG-INPV-18 | Testing for Server-side Template Injection | ***Pending***
+### WSTG-INPV-18 | Testing for Server-side Template Injection
 
 **Description:** Test if user input is processed through template engines. SSTI allows code execution.
 
@@ -2441,7 +2441,7 @@ Error message reveals engine
 
 ---
 
-### WSTG-INPV-19 | Testing for Server-Side Request Forgery | ***Pending***
+### WSTG-INPV-19 | Testing for Server-Side Request Forgery
 
 **Description:** Test if application can be forced to make requests to arbitrary URLs. SSRF enables internal network access or cloud metadata abuse.
 
@@ -2490,7 +2490,7 @@ Internal IP scanning successful
 
 ## 8. Error Handling Testing
 
-### WSTG-ERRH-01 | Testing for Improper Error Handling | ***Pending***
+### WSTG-ERRH-01 | Testing for Improper Error Handling
 
 **Description:** Verify error messages don't leak sensitive information (source code, file paths, database details). Excessive error detail aids reconnaissance.
 
@@ -2533,7 +2533,7 @@ Source code snippets in error
 
 ## 9. Weak Cryptography Testing
 
-### WSTG-CRYP-01 | Testing for Weak Transport Layer Security | ***Pending***
+### WSTG-CRYP-01 | Testing for Weak Transport Layer Security
 
 **Description:** Verify TLS/SSL configuration is strong. Weak ciphers or protocol versions allow downgrade attacks and eavesdropping.
 
@@ -2575,7 +2575,7 @@ Certificate with short validity
 
 ---
 
-### WSTG-CRYP-02 | Testing for Padding Oracle | ***Pending***
+### WSTG-CRYP-02 | Testing for Padding Oracle
 
 **Description:** Test for padding oracle vulnerabilities in encrypted data. Padding oracles allow decryption without knowing key.
 
@@ -2614,7 +2614,7 @@ Decryption of encrypted data
 
 ---
 
-### WSTG-CRYP-03 | Testing for Sensitive Information Sent via Unencrypted Channels | ***Pending***
+### WSTG-CRYP-03 | Testing for Sensitive Information Sent via Unencrypted Channels
 
 **Description:** Verify sensitive data is always transmitted over HTTPS. Unencrypted transmission allows interception.
 
@@ -2653,7 +2653,7 @@ Sensitive data in cleartext
 
 ---
 
-### WSTG-CRYP-04 | Testing for Weak Encryption | ***Pending***
+### WSTG-CRYP-04 | Testing for Weak Encryption
 
 **Description:** Test for use of weak or deprecated encryption algorithms. Weak encryption can be broken or brute-forced.
 
@@ -2699,7 +2699,7 @@ No encryption at all
 
 ## 10. Business Logic Testing
 
-### WSTG-BUSL-01 | Test Business Logic Data Validation | ***Pending***
+### WSTG-BUSL-01 | Test Business Logic Data Validation
 
 **Description:** Test if business logic validates data constraints. Missing validation allows invalid states (negative prices, future dates in past).
 
@@ -2744,7 +2744,7 @@ Discount over 100% accepted
 
 ---
 
-### WSTG-BUSL-02 | Test Ability to Forge Requests | ***Pending***
+### WSTG-BUSL-02 | Test Ability to Forge Requests
 
 **Description:** Test if application validates request authenticity. Forged requests allow unauthorized actions.
 
@@ -2784,7 +2784,7 @@ Price changed in checkout
 
 ---
 
-### WSTG-BUSL-03 | Test Integrity Checks | ***Pending***
+### WSTG-BUSL-03 | Test Integrity Checks
 
 **Description:** Test if application detects data modification. Missing integrity checks allow tampering with critical data.
 
@@ -2823,7 +2823,7 @@ Tampered data processed as valid
 
 ---
 
-### WSTG-BUSL-04 | Test for Process Timing | ***Pending***
+### WSTG-BUSL-04 | Test for Process Timing
 
 **Description:** Test if application enforces proper timing constraints. Race conditions or timing issues can lead to logic bypass.
 
@@ -2863,7 +2863,7 @@ Race condition exploited
 
 ---
 
-### WSTG-BUSL-05 | Test Number of Times a Function Can Be Used Limits | ***Pending***
+### WSTG-BUSL-05 | Test Number of Times a Function Can Be Used Limits
 
 **Description:** Test if application enforces usage limits. Missing limits allow abuse (redeem coupon infinite times, unlimited free credits).
 
@@ -2910,7 +2910,7 @@ Function no rate limiting
 
 ---
 
-### WSTG-BUSL-06 | Testing for the Circumvention of Work Flows | ***Pending***
+### WSTG-BUSL-06 | Testing for the Circumvention of Work Flows
 
 **Description:** Test if multi-step workflows can be bypassed. Skipping steps allows unauthorized actions (checkout without payment, approval bypass).
 
@@ -2956,7 +2956,7 @@ Backward workflow allowed
 
 ---
 
-### WSTG-BUSL-07 | Test Defenses Against Application Misuse | ***Pending***
+### WSTG-BUSL-07 | Test Defenses Against Application Misuse
 
 **Description:** Test if application detects and prevents abuse patterns. Missing detection allows account takeover, spam, or resource exhaustion.
 
@@ -3005,7 +3005,7 @@ No CAPTCHA or similar defenses
 
 ---
 
-### WSTG-BUSL-08 | Test Upload of Unexpected File Types | ***Pending***
+### WSTG-BUSL-08 | Test Upload of Unexpected File Types
 
 **Description:** Test file upload validation. Weak validation allows uploading executable files, scripts, or files that compromise application security.
 
@@ -3056,7 +3056,7 @@ Directory traversal in filename
 
 ---
 
-### WSTG-BUSL-09 | Test Upload of Malicious Files | ***Pending***
+### WSTG-BUSL-09 | Test Upload of Malicious Files
 
 **Description:** Test if application scans uploads for malware. Missing AV scanning allows malware distribution.
 
@@ -3103,7 +3103,7 @@ Polyglot file accepted
 
 ## 11. Client-side Testing
 
-### WSTG-CLNT-01 | Testing for DOM-Based Cross Site Scripting | ***Pending***
+### WSTG-CLNT-01 | Testing for DOM-Based Cross Site Scripting
 
 **Description:** Test DOM manipulation with user-controlled data. DOM-based XSS doesn't require server reflection; JavaScript processes untrusted input.
 
@@ -3136,7 +3136,7 @@ DOM property set to user input
 
 ---
 
-### WSTG-CLNT-02 | Testing for JavaScript Execution | ***Pending***
+### WSTG-CLNT-02 | Testing for JavaScript Execution
 
 **Description:** Test if JavaScript code can be executed in the application context. Execution without CSP allows script injection attacks.
 
@@ -3173,7 +3173,7 @@ Web worker execution
 
 ---
 
-### WSTG-CLNT-03 | Testing for HTML Injection | ***Pending***
+### WSTG-CLNT-03 | Testing for HTML Injection
 
 **Description:** Test if HTML can be injected into page. HTML injection can be used to redirect users or steal credentials.
 
@@ -3208,7 +3208,7 @@ Attribute boundary broken
 
 ---
 
-### WSTG-CLNT-04 | Testing for Client-side URL Redirect | ***Pending***
+### WSTG-CLNT-04 | Testing for Client-side URL Redirect
 
 **Description:** Test if application redirects users to attacker-controlled URLs. Client-side redirects allow credential harvesting and phishing.
 
@@ -3247,7 +3247,7 @@ Open redirect vulnerability
 
 ---
 
-### WSTG-CLNT-05 | Testing for CSS Injection | ***Pending***
+### WSTG-CLNT-05 | Testing for CSS Injection
 
 **Description:** Test if CSS can be injected. CSS injection can be used for keylogging, credential harvesting, or UI defacement.
 
@@ -3282,7 +3282,7 @@ Expression evaluation
 
 ---
 
-### WSTG-CLNT-06 | Testing for Client-side Resource Manipulation | ***Pending***
+### WSTG-CLNT-06 | Testing for Client-side Resource Manipulation
 
 **Description:** Test if client-side resource validation can be bypassed. Client-side checks can be circumvented by intercepting requests.
 
@@ -3322,7 +3322,7 @@ Client-side checks not validated server-side
 
 ---
 
-### WSTG-CLNT-07 | Testing Cross Origin Resource Sharing | ***Pending***
+### WSTG-CLNT-07 | Testing Cross Origin Resource Sharing
 
 **Description:** Test CORS configuration for overly permissive policies. Misconfigured CORS allows cross-origin data theft.
 
@@ -3364,7 +3364,7 @@ Sensitive data in CORS response
 
 ---
 
-### WSTG-CLNT-08 | Testing for Cross Site Flashing | ***Pending***
+### WSTG-CLNT-08 | Testing for Cross Site Flashing
 
 **Description:** Test Flash content for vulnerabilities (crossdomain.xml, CSRF, data exposure). Flash can be exploited similarly to web applications.
 
@@ -3405,7 +3405,7 @@ or hardcoded credentials, sensitive URLs in Flash
 
 ---
 
-### WSTG-CLNT-09 | Testing for Clickjacking | ***Pending***
+### WSTG-CLNT-09 | Testing for Clickjacking
 
 **Description:** Test if application is vulnerable to clickjacking attacks. Missing X-Frame-Options allows overlaying malicious content.
 
@@ -3441,7 +3441,7 @@ Clickable elements exploitable
 
 ---
 
-### WSTG-CLNT-10 | Testing WebSockets | ***Pending***
+### WSTG-CLNT-10 | Testing WebSockets
 
 **Description:** Test WebSocket connections for security flaws (no auth, unencrypted, CORS issues). WebSockets bypass standard web security controls.
 
@@ -3482,7 +3482,7 @@ Message injection successful
 
 ---
 
-### WSTG-CLNT-11 | Testing Web Messaging | ***Pending***
+### WSTG-CLNT-11 | Testing Web Messaging
 
 **Description:** Test postMessage() for security flaws. Improper origin validation allows cross-origin communication.
 
@@ -3523,7 +3523,7 @@ Sensitive data in messages
 
 ---
 
-### WSTG-CLNT-12 | Testing Browser Storage | ***Pending***
+### WSTG-CLNT-12 | Testing Browser Storage
 
 **Description:** Test localStorage and sessionStorage for sensitive data. Unencrypted browser storage is accessible via XSS.
 
@@ -3561,7 +3561,7 @@ XSS can steal storage data
 
 ---
 
-### WSTG-CLNT-13 | Testing for Cross Site Script Inclusion | ***Pending***
+### WSTG-CLNT-13 | Testing for Cross Site Script Inclusion
 
 **Description:** Test for XSSI vulnerabilities. JSON responses can be executed as script if included via `<script>` tag.
 
@@ -3606,7 +3606,7 @@ JSON executable as JavaScript
 
 ## 12. API Testing
 
-### WSTG-APIT-01 | Testing GraphQL | ***Pending***
+### WSTG-APIT-01 | Testing GraphQL
 
 **Description:** Test GraphQL API for common vulnerabilities (introspection enabled, missing auth, excessive data exposure). GraphQL has unique security considerations.
 
