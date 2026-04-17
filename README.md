@@ -170,9 +170,10 @@ All playbooks follow the **OWASP Web Security Testing Guide (WSTG)** structure:
 
 ## Version
 
-**Last Updated:** March 14, 2026  
+**Last Updated:** April 17, 2026  
 **Playbooks:** 12 comprehensive guides  
-**Testing Categories:** 80+
+**Testing Categories:** 80+  
+**Total Test Cases:** 200+ practical procedures across all playbooks
 
 ---
 
