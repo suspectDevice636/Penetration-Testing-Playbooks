@@ -3,8 +3,8 @@
 **Version:** 3.0  
 **Last Updated:** 2026-04-16  
 **Status:** Active Development  
-**Update Frequency:** Monthly-Quarterly  
-**Maintainer:** Security Research Team
+**Update Frequency:** Quarterly  
+**Maintainer:** Suspect Device
 
 ---
 
@@ -49,19 +49,19 @@ Comprehensive pentesting and security assessment guide for **chatbots, AI assist
 
 ### For Security Testers
 
-1. **Read this README** (5 min)
-2. **Review the main playbook** start → Phase 1 (15 min)
-3. **Pick a testing phase** based on your time/scope (60-120 min)
-4. **Use the tools section** to automate testing (30 min)
-5. **Document findings** using the report template (30 min)
+1. **Read this README** 
+2. **Review the main playbook** start → Phase 1 
+3. **Pick a testing phase** based on your time/scope 
+4. **Use the tools section** to automate testing 
+5. **Document findings** using the report template 
 
 
 ### For Developers/Security Teams
 
-1. **Review remediation checklist** (10 min)
-2. **Implement CRITICAL priority fixes** (depends on findings)
-3. **Set up monitoring** per tools section (30 min)
-4. **Plan quarterly re-testing** (recurring)
+1. **Review remediation checklist** 
+2. **Implement CRITICAL priority fixes** 
+3. **Set up monitoring** per tools section 
+4. **Plan quarterly re-testing** 
 
 ### For Researchers/Students
 
@@ -75,37 +75,37 @@ Comprehensive pentesting and security assessment guide for **chatbots, AI assist
 
 ## Main Playbook
 
-**File:** `Chatbot-Prompt-Injection-Playbook.md` (8,500+ lines)
+**File:** `Chatbot-Prompt-Injection-Playbook.md` 
 
 ### Quick Index
 
-| Section | Category | Time |
-|---------|----------|------|
-| 1 | **Chatbot Enumeration & Fingerprinting** | 30-60 min |
-| 2 | **Basic Prompt Injection** | 30-45 min |
-| 3 | **Information Disclosure & Configuration Leakage** | 45-60 min |
-| 4 | **Direct Context Extraction (DCE)** | 60-90 min |
-| 5 | **Behavioral Bypass & Manipulation** | 30-45 min |
-| 6 | **Function/Plugin Exploitation** | 45-60 min |
-| 7 | **Token Limit & Context Window Exploitation** | 30-45 min |
-| 8 | **Model-Specific Vulnerabilities** | 30-45 min |
-| 9 | **Prompt Injection Detection & Bypass** | 45-60 min |
-| 10 | **Conversation-Based Attacks** | 30-45 min |
-| 11 | **Indirect Prompt Injection** | 45-60 min |
-| 12 | **Multimodal Prompt Injection** (NEW) | 45-60 min |
-| 13 | **Chain-of-Thought (CoT) Poisoning** (NEW) | 45-60 min |
-| 14 | **Advanced Plugin & Integration Attacks** (NEW) | 60-90 min |
-| 15 | **Jailbreak Detection & Evasion** (NEW) | 45-60 min |
+| Section | Category |
+|---------|----------|
+| 1 | **Chatbot Enumeration & Fingerprinting** |
+| 2 | **Basic Prompt Injection** |
+| 3 | **Information Disclosure & Configuration Leakage** |
+| 4 | **Direct Context Extraction (DCE)** |
+| 5 | **Behavioral Bypass & Manipulation** |
+| 6 | **Function/Plugin Exploitation** |
+| 7 | **Token Limit & Context Window Exploitation** |
+| 8 | **Model-Specific Vulnerabilities** |
+| 9 | **Prompt Injection Detection & Bypass** |
+| 10 | **Conversation-Based Attacks** |
+| 11 | **Indirect Prompt Injection** |
+| 12 | **Multimodal Prompt Injection** (NEW) |
+| 13 | **Chain-of-Thought (CoT) Poisoning** (NEW) |
+| 14 | **Advanced Plugin & Integration Attacks** (NEW) |
+| 15 | **Jailbreak Detection & Evasion** (NEW) |
 
 
 ### Testing Phases
 
-- **Phase 1: Reconnaissance** (30-60 min) — Identify capabilities
-- **Phase 2: Basic Injection** (60-90 min) — Test direct attacks
-- **Phase 3: Advanced Exploitation** (90-120 min) — Complex vectors
-- **Phase 4: Integration Testing** (60-90 min) — Plugin exploitation
-- **Phase 5: Documentation** (60-90 min) — Report & recommendations
-- **Phase 6: Defense Validation** (60 min) — Verify remediation
+- **Phase 1: Reconnaissance** — Identify capabilities
+- **Phase 2: Basic Injection** — Test direct attacks
+- **Phase 3: Advanced Exploitation** — Complex vectors
+- **Phase 4: Integration Testing** — Plugin exploitation
+- **Phase 5: Documentation** — Report & recommendations
+- **Phase 6: Defense Validation** — Verify remediation
 
 ---
 
@@ -124,20 +124,6 @@ Comprehensive pentesting and security assessment guide for **chatbots, AI assist
 | **Enterprise** | Protect AI | Custom | 1-2 weeks |
 | **Red team service** | Robust Intelligence | $10K-50K | 2-4 weeks |
 | **DIY testing** | Our Python framework | Free | 5 min |
-
-### Quick Tool Comparison
-
-```
-┌─────────────────┬────────┬──────────┬──────────┬─────────┐
-│ Tool            │ Price  │ Ease     │ Power    │ Support │
-├─────────────────┼────────┼──────────┼──────────┼─────────┤
-│ Promptfoo       │ Free   │ ⭐⭐⭐⭐⭐ │ ⭐⭐⭐   │ Good    │
-│ Giskard         │ Free   │ ⭐⭐⭐   │ ⭐⭐⭐⭐ │ Good    │
-│ Our Python tool │ Free   │ ⭐⭐⭐⭐ │ ⭐⭐⭐   │ DIY     │
-│ Lakera Guard    │ Pay/mo │ ⭐⭐⭐⭐⭐ │ ⭐⭐⭐⭐ │ Good    │
-│ Protect AI      │ Ent.   │ ⭐⭐    │ ⭐⭐⭐⭐⭐ │ Excellent│
-└─────────────────┴────────┴──────────┴──────────┴─────────┘
-```
 
 ---
 
@@ -291,23 +277,23 @@ python test-cases.py \
 
 ### Files in This Section
 
-| File | Purpose | Size |
-|------|---------|------|
-| `Chatbot-Prompt-Injection-Playbook.md` | Main comprehensive guide | 8.5K lines |
-| `tools-and-frameworks.md` | Tool recommendations & setup | 500+ lines |
-| `payloads.json` | Organized test payload database | 200+ payloads |
-| `test-cases.py` | Automated testing framework | 500+ lines |
-| `CHANGELOG-LLM.md` | Version history & updates | 200+ lines |
-| `VERSION.txt` | Current version | 1 line |
-| `README.md` | This file | Overview |
+| File | Purpose |
+|------|---------|
+| `Chatbot-Prompt-Injection-Playbook.md` | Main comprehensive guide |
+| `tools-and-frameworks.md` | Tool recommendations & setup |
+| `payloads.json` | Organized test payload database |
+| `test-cases.py` | Automated testing framework |
+| `CHANGELOG-LLM.md` | Version history & updates |
+| `VERSION.txt` | Current version |
+| `README.md` | This file |
 
 ### Key Sections to Read
 
 **For Quick Assessment:**
-- Section 1: Enumeration (5 min)
-- Section 2: Basic Injection (10 min)
-- Section 3: Info Disclosure (10 min)
-- Testing Methodology → Phase 1-2 (20 min)
+- Section 1: Enumeration 
+- Section 2: Basic Injection 
+- Section 3: Info Disclosure 
+- Testing Methodology → Phase 1-2 
 
 **For Comprehensive Testing:**
 - All 15 sections
@@ -516,7 +502,7 @@ See `tools-and-frameworks.md` for:
 
 **LLM Playbook v3.0**  
 **Last Updated:** 2026-04-16  
-**Maintainer:** Security Research Team  
+**Maintainer:** SuspectDevice  
 **Status:** Active Development  
 **Update Frequency:** Monthly-Quarterly
 
