@@ -46,14 +46,165 @@ Both tools complement each other: Postman for API exploration and request buildi
 
 ---
 
-### 1.2 Discovering API Endpoints
+### 1.2 Importing API Documentation into Postman
+
+**Objective:** Import target API documentation to jumpstart testing
+
+**Where to Find API Documentation:**
+
+- [ ] **Public endpoints**
+  - `/swagger.json` or `/swagger.yaml`
+  - `/openapi.json` or `/openapi.yaml`
+  - `/api-docs` or `/api/docs`
+  - `/.well-known/openapi.json`
+  - `/v1/docs` or `/v2/docs` (version-specific)
+
+- [ ] **Known documentation repositories**
+  - GitHub: Search `api-docs`, `swagger`, `openapi` in target org
+  - GitLab public projects
+  - API documentation sites (Stoplight, Apigee, AWS docs)
+  - Internal wikis/documentation (may be public-facing)
+
+- [ ] **HTTP methods discovery**
+  - Send OPTIONS request to API endpoint
+  - Response includes `Allow` header with available methods
+  - Example: `curl -X OPTIONS https://api.example.com/users`
+
+**Postman Import Methods:**
+
+**Method 1: Import from URL**
+1. Postman → File → Import
+2. Select "Link" tab
+3. Paste URL to OpenAPI/Swagger file:
+   - `https://api.example.com/swagger.json`
+   - `https://api.example.com/openapi.yaml`
+   - `https://api.example.com/api-docs`
+4. Click Import
+5. Postman generates collection with all endpoints
+
+**Method 2: Import from File**
+1. Download API specification file:
+   ```bash
+   curl https://api.example.com/swagger.json -o swagger.json
+   curl https://api.example.com/openapi.yaml -o openapi.yaml
+   ```
+2. Postman → File → Import
+3. Select "File" tab
+4. Upload the JSON/YAML file
+5. Collection automatically created with all endpoints
+
+**Method 3: Import from Raw Text**
+1. Postman → File → Import
+2. Select "Raw text" tab
+3. Paste OpenAPI/Swagger JSON or YAML content
+4. Click Import
+
+**Supported Formats:**
+- OpenAPI 3.0 / 3.1 (recommended)
+- Swagger 2.0 / Open API 2.0
+- WSDL (for SOAP APIs)
+- GraphQL schema
+- RAML
+- API Blueprint
+- Postman Collection v2.1
+
+**Post-Import Configuration:**
+
+After importing documentation, configure:
+
+1. **Set Base URL**
+   - Edit collection → Variables
+   - Create `base_url` variable: `https://api.example.com`
+   - Reference in requests: `{{base_url}}/api/v1/users`
+   - Override per environment (dev, staging, prod)
+
+2. **Configure Authentication**
+   - Collection → Authorization tab
+   - Select auth type (Bearer, API Key, OAuth 2.0, Basic)
+   - Reference variables for credentials
+
+3. **Create Environments**
+   - New → Environment
+   - Set variables per environment:
+     - `base_url`: `https://dev-api.example.com`
+     - `api_key`: `dev-key-xxx`
+     - `bearer_token`: `dev-token-xxx`
+   - Production environment (separate, secure)
+
+4. **Validate Requests**
+   - Run imported requests against target
+   - Verify authentication is working
+   - Check all endpoints respond as documented
+
+**If Documentation Doesn't Exist:**
+
+1. **Automated discovery approach**
+   - Use Burp Suite → API scanner to find endpoints
+   - Export findings to Postman
+   - Test discovered endpoints
+
+2. **Manual collection creation**
+   - New → Collection
+   - Add folder for each API resource
+   - Manually create requests based on:
+     - Intercepted Burp traffic
+     - Application behavior analysis
+     - Common API conventions
+   - Save with examples for future reference
+
+3. **Documentation from reverse engineering**
+   - Proxy traffic through Burp Suite
+   - Monitor all requests during normal app usage
+   - Use Burp → HTTP history to identify endpoints
+   - Document request/response patterns
+   - Import network traffic into Postman
+
+**Common Documentation Locations to Check:**
+
+```bash
+# Check common documentation paths
+curl -s https://api.example.com/swagger.json
+curl -s https://api.example.com/swagger.yaml
+curl -s https://api.example.com/openapi.json
+curl -s https://api.example.com/api-docs
+curl -s https://api.example.com/api/v1/docs
+curl -s https://api.example.com/v1/api-docs
+curl -s https://api.example.com/graphql/schema
+
+# Check OPTIONS method
+curl -X OPTIONS https://api.example.com/api/v1/users -v
+
+# Search for .well-known
+curl -s https://api.example.com/.well-known/openapi.json
+```
+
+**Verification Checklist:**
+- [ ] Found API documentation (or confirmed it doesn't exist)
+- [ ] Successfully imported into Postman
+- [ ] Base URL configured correctly
+- [ ] Authentication variables set up
+- [ ] Tested at least one endpoint successfully
+- [ ] All endpoints visible in Postman collection
+- [ ] Collection organized logically (by resource/tag)
+- [ ] Pre-request scripts configured if needed
+- [ ] Tests added for validation
+
+---
+
+### 1.3 Discovering API Endpoints
 
 **Objective:** Map all accessible API endpoints and methods
 
 **Postman Workflow:**
-1. **Import API Documentation**
-   - File → Import → Paste OpenAPI/Swagger URL or JSON
-   - Postman auto-generates all endpoints and methods
+
+If documentation was imported:
+- Review imported endpoints in collection
+- Test each endpoint with valid parameters
+- Document actual behavior vs. documented behavior
+- Identify missing or hidden endpoints
+
+If documentation wasn't available:
+- See section 1.2 "If Documentation Doesn't Exist"
 
 2. **Manual Endpoint Discovery**
    - Create requests for common API paths:
@@ -84,7 +235,7 @@ Both tools complement each other: Postman for API exploration and request buildi
 
 ---
 
-### 1.3 Identifying Authentication Mechanisms
+### 1.4 Identifying Authentication Mechanisms
 
 **Objective:** Determine how API authenticates requests
 
