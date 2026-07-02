@@ -660,7 +660,8 @@ site:target.com email
 site:target.com contact
 
 # Email harvesting
-theHarvester -d target.com -b google,linkedin,twitter
+theHarvester -d target.com -b google,linkedin,bing,duckduckgo
+# Note: twitter/X source removed — X revoked API access and blocked scraping (2023+)
 
 # Extract from source
 curl https://target.com -s | grep -o '[a-zA-Z0-9._-]*@[a-zA-Z0-9._-]*'

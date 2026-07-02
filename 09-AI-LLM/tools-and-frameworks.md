@@ -140,15 +140,15 @@ promptfoo view  # Interactive dashboard
 
 **Installation:**
 ```bash
-pip install langchain langchain-experimental --break-system-packages
+pip install langchain langchain-openai langchain-experimental --break-system-packages
 ```
 
 **Example:**
 ```python
-from langchain.chat_models import ChatOpenAI
+from langchain_openai import ChatOpenAI  # langchain.chat_models deprecated in v0.3+
 from langchain_experimental.red_team.red_team_chain import RedTeamChain
 
-model = ChatOpenAI(model_name="gpt-4")
+model = ChatOpenAI(model="gpt-4")
 
 red_team = RedTeamChain.from_llm(
     llm=model,
@@ -572,10 +572,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       

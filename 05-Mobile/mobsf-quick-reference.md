@@ -15,7 +15,9 @@ Free, open-source static analyzer. Automatically scans APK/IPA for:
 
 **Docker (recommended):**
 ```bash
-docker run -it -p 8000:8000 -v $(pwd):/home/mobsf/uploads opensecurity/mobile-security-framework
+# Pin to a specific release tag — check https://hub.docker.com/r/opensecurity/mobile-security-framework/tags
+# Replace v3.9.8 with the current stable tag before running
+docker run -it -p 8000:8000 -v $(pwd):/home/mobsf/uploads opensecurity/mobile-security-framework:v3.9.8
 # Then navigate to http://localhost:8000
 ```
 
