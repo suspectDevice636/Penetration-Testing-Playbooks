@@ -31,6 +31,7 @@ Each playbook follows a consistent structure:
 - **[Web App Penetration Testing](01-Web-Applications/webapp-pentesting-playbook.md)** — Complete web application testing methodology (authentication, authorization, injection, XSS, CSRF, etc.)
 - **[Burp Suite Pro WSTG Workflow](01-Web-Applications/burp-pro-wstg-workflow.md)** — Interactive web app testing using Burp Pro, mapped to WSTG phases (10 phases, automated + manual testing)
 - **[Web App Quick Reference](01-Web-Applications/webapp-pentesting-quick-reference.md)** — Condensed cheat sheet for quick lookups during engagements
+- **[SPA Penetration Testing](01-Web-Applications/SPA_PENETRATION_TESTING_PLAYBOOK.md)** — React/Angular/Vue security testing (client-side routing, JavaScript bundle reconnaissance, local storage inspection, DOM-based XSS, state management attacks)
 
 ### 🔌 APIs
 - **[API Security Testing](02-APIs/api-pentesting-playbook.md)** — REST/GraphQL API enumeration, authentication bypass, rate limiting, injection attacks, IDOR
@@ -60,6 +61,11 @@ Each playbook follows a consistent structure:
 ### 🤖 AI & Large Language Models
 - **[Chatbot & Prompt Injection](09-AI-LLM/Chatbot-Prompt-Injection-Playbook.md)** — OWASP GenAI Top 10 security testing (prompt injection, direct context extraction, model extraction, jailbreaks, RAG attacks, plugin exploitation, training data poisoning)
 
+### 🔗 MCP & Agent Security
+- **[MCP Playbook (Comprehensive)](10-MCP/MCP_Penetration_Testing_Playbook_Comprehensive.md)** — Full-coverage Model Context Protocol testing: endpoint discovery, authentication, authorization, tool enumeration, resource access controls, input validation, error handling, attack surface matrix
+- **[MCP Playbook (Agentic)](10-MCP/MCP_Penetration_Testing_Playbook_Agentic.md)** — Agent-side MCP exploitation: tool poisoning, prompt injection via tools, confused deputy attacks, tool chain exploitation, credential extraction, OAuth token misuse
+- **[MCP Playbook Index](10-MCP/README.md)** — Quick decision guide for choosing between comprehensive and agentic approaches
+
 ---
 
 ## Category Overview
@@ -67,6 +73,7 @@ Each playbook follows a consistent structure:
 | Category | Focus | Best For |
 |----------|-------|----------|
 | Web Applications | OWASP Top 10, injection, XSS, CSRF, auth bypass | Web app security assessments |
+| SPAs | Client-side routing, JS bundle analysis, DOM-XSS, state management | Single-page application testing |
 | APIs | REST/GraphQL endpoints, rate limiting, IDOR | API penetration testing |
 | Network | Scanning, enumeration, exploitation, lateral movement | Infrastructure security |
 | Cloud | AWS/Azure/GCP misconfigurations, IAM, data exposure | Cloud security audits |
@@ -75,6 +82,7 @@ Each playbook follows a consistent structure:
 | OSINT | Information gathering, reconnaissance | Passive reconnaissance phase |
 | Compliance | PCI-DSS, HIPAA alignment, audit readiness | Compliance-driven testing |
 | AI & LLMs | OWASP GenAI Top 10, prompt injection, model extraction | LLM/chatbot security testing |
+| MCP & Agents | Model Context Protocol, tool poisoning, confused deputy | Agent framework security testing |
 
 ---
 
@@ -170,10 +178,10 @@ All playbooks follow the **OWASP Web Security Testing Guide (WSTG)** structure:
 
 ## Version
 
-**Last Updated:** April 17, 2026  
-**Playbooks:** 12 comprehensive guides  
+**Last Updated:** July 7, 2026  
+**Playbooks:** 15 comprehensive guides  
 **Testing Categories:** 80+  
-**Total Test Cases:** 200+ practical procedures across all playbooks
+**Total Test Cases:** 250+ practical procedures across all playbooks
 
 ---
 
