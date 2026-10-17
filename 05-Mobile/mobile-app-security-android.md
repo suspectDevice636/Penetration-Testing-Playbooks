@@ -396,11 +396,11 @@ File file = new File(base, sanitize(userPath));  // Validates within base
 # From: https://github.com/frida/frida/releases
 
 # Assuming ARM64 architecture:
-wget https://github.com/frida/frida/releases/download/14.2.2/frida-server-14.2.2-android-arm64.xz
-xz -d frida-server-14.2.2-android-arm64.xz
+wget https://github.com/frida/frida/releases/download/[VERSION]/frida-server-[VERSION]-android-arm64.xz
+xz -d frida-server-[VERSION]-android-arm64.xz
 
 # Push to device
-adb push frida-server-14.2.2-android-arm64 /data/local/tmp/frida-server
+adb push frida-server-[VERSION]-android-arm64 /data/local/tmp/frida-server
 adb shell chmod +x /data/local/tmp/frida-server
 
 # Start Frida server

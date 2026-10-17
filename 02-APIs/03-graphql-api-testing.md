@@ -759,12 +759,12 @@ const user = {
 ## 13. Resources
 
 - **GraphQL Security Best Practices:** https://cheatsheetseries.owasp.org/cheatsheets/GraphQL_Cheat_Sheet.html
-- **GraphQL Security Guide:** https://spec.graphql.org/June2018/#sec-Introspection
+- **GraphQL Security Guide:** https://spec.graphql.org/September2025/#sec-Introspection
 - **OWASP Testing Guide (Adapted for GraphQL):** https://owasp.org/www-project-web-security-testing-guide/
 - **GraphQL Tutorials:** https://graphql.org/learn/
 - **Apollo Server Security:** https://www.apollographql.com/docs/apollo-server/security/authentication/
 
 ---
 
-**Last Updated:** 2026-03-18  
+**Last Updated:** 2026-10-17  
 **Scope:** GraphQL API Security Testing for OWASP WSTG v4.2 (adapted)

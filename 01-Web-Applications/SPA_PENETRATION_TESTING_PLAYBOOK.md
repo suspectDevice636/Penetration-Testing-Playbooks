@@ -1076,7 +1076,7 @@ apollo schema:download --endpoint=https://target.com/api/graphql
 ## References
 
 - OWASP Testing Guide v4.2
-- OWASP Top 10 2021
+- OWASP Top 10 2025 (note: SSRF folded into Broken Access Control; new categories added for Software Supply Chain Failures and Mishandling of Exceptional Conditions)
 - PortSwigger Web Security Academy
 - CWE Top 25
 - Strobes SPA Pentesting Guide

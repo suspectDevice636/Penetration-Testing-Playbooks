@@ -2,9 +2,55 @@
 
 All notable changes to the Chatbot & Prompt Injection Pentesting Playbook will be documented in this file.
 
-**Current Version:** 3.0  
-**Last Updated:** 2026-04-16  
+**Current Version:** 3.1  
+**Last Updated:** 2026-10-17  
 **Maintainer:** suspectDevice
+
+---
+
+## Version 3.1 (2026-10-17) - OWASP 2025 (v2.0) Remap & New Categories
+
+### 🆕 New Major Sections
+
+- **Section 17: System Prompt Leakage**
+  - Direct extraction (verbatim/paraphrase/encoding bypass)
+  - Indirect/inferential recovery (differential probing, error-message leakage, tool-schema inference)
+  - CVSS: 5.3 - 7.5 (MEDIUM to HIGH)
+
+- **Section 18: Vector & Embedding Weaknesses**
+  - Embedding inversion & data reconstruction
+  - Vector store access control & cross-tenant leakage
+  - Vector store poisoning (embedding-pipeline level, distinct from Section 16.2 document-level RAG poisoning)
+  - CVSS: 6.5 - 8.6 (MEDIUM to HIGH)
+
+### 🔧 Corrected Framework Mapping
+
+Quarterly review flagged that this playbook was labeled "OWASP GenAI Top 10 (2025)" throughout but actually listed the 2024/v1.1 category set (LLM01 Prompt Injection ... LLM10 Insufficient Monitoring). Remapped to the real 2025 (v2.0) list:
+
+- LLM01 Prompt Injection (unchanged)
+- LLM02 Sensitive Information Disclosure (was LLM06)
+- LLM03 Supply Chain (was LLM05)
+- LLM04 Data and Model Poisoning (was LLM03, renamed)
+- LLM05 Improper Output Handling (was LLM02, renamed)
+- LLM06 Excessive Agency (new standalone category; previously folded into Insecure Plugin Design)
+- LLM07 System Prompt Leakage (new — see Section 17)
+- LLM08 Vector and Embedding Weaknesses (new — see Section 18)
+- LLM09 Misinformation (new; coverage currently thin, flagged as a gap for v3.2)
+- LLM10 Unbounded Consumption (was LLM04 Model Denial of Service, broadened)
+
+"Model Theft," "Unauthorized Code Execution," and "Insufficient Monitoring" are no longer standalone 2025 Top 10 categories. Relevant existing tests were kept and remapped under Supply Chain, Improper Output Handling, and Excessive Agency rather than deleted.
+
+### 🔧 Technical Corrections & Improvements
+
+- Rebuilt the OWASP GenAI Top 10 Detailed Reference section against the corrected category list.
+- Rebuilt the Attack Coverage Matrix against the corrected columns, and extended its rows to cover Sections 12–18, which existed in the playbook since v3.0 but had never been added to the matrix.
+- Updated Quick Navigation and Overview sections to reference the corrected framework and new sections.
+
+### 📝 What Changed from 3.0
+
+- **New Sections:** 2 major (17, 18)
+- **Rebuilt:** OWASP reference table, coverage matrix (all columns + 7 previously-missing rows)
+- **Known Gap:** LLM09 Misinformation has minimal dedicated coverage — candidate for v3.2
 
 ---
 
@@ -178,13 +224,14 @@ Refer to main security playbooks repository changelog for historical versions.
 
 ## Upcoming (Roadmap)
 
-### v3.1 (Planned: Q3 2026)
+### v3.2 (Planned: Q1 2027)
+- Dedicated LLM09 Misinformation test section (flagged as thin coverage in v3.1)
 - Video/walkthrough tutorials for common payloads
 - Integration with automated scanning tools
 - Expanded case studies from real-world testing
 - Community contributions & feedback integration
 
-### v3.2 (Planned: Q4 2026)
+### v3.3 (Planned: Q2 2027)
 - CLI tool for automated testing
 - Browser extension for manual testing
 - VS Code plugin for payload generation
@@ -214,6 +261,9 @@ Found an issue? Know a new attack vector? Have a working exploit?
 ---
 
 ## Deprecations & Breaking Changes
+
+### v3.1
+The LLM01–LLM10 labels now refer to the 2025 (v2.0) OWASP categories, not the 2024/v1.1 categories this playbook previously (and incorrectly) used under the same labels. Anyone who cross-referenced a specific code (e.g. "LLM06") against the old table should re-check it against the new one in the OWASP GenAI Top 10 (2025) - Detailed Reference section — the same code now points to a different category. All existing test content was kept; only the category labels and mapping changed.
 
 ### None in v3.0
 All previous sections maintained for backward compatibility. New sections are additive only.

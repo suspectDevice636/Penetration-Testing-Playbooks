@@ -1583,7 +1583,7 @@ After remediation, repeat the reproduction steps above. The server should return
 - Data Science Dojo — MCP Security 2025: https://datasciencedojo.com/blog/mcp-security-risks-and-challenges/
 
 **Standards:**
-- OAuth 2.1: https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1-13
+- OAuth 2.1: https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1
 - RFC 9728 — Protected Resource Metadata: https://datatracker.ietf.org/doc/html/rfc9728
 
 **CWE References:**

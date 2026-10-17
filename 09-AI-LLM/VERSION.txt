@@ -1,4 +1,4 @@
-3.0
-Last updated: 2026-04-16
+3.1
+Last updated: 2026-10-17
 Status: Active Development
 Update frequency: Monthly-Quarterly

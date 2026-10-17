@@ -41,7 +41,7 @@ Each playbook follows a consistent structure:
 - **[Network Pentesting](03-Network-Infrastructure/network-infrastructure-pentesting-playbook.md)** — Nmap scanning, service enumeration, exploitation, lateral movement, privilege escalation
 
 ### ☁️ Cloud
-- **[AWS Security Testing](04-Cloud/cloud-aws-pentesting-playbook.md)** — AWS IAM misconfigurations, S3 bucket enumeration, EC2/RDS exploitation, cloud-specific auth bypass
+- **[AWS Security Testing](04-Cloud/cloud-aws-pentesting-playbook.md)** — AWS IAM misconfigurations, S3 bucket enumeration, EC2/RDS exploitation, cloud-specific auth bypass, Bedrock/SageMaker AI service security
 
 ### 📱 Mobile Applications
 - **[Mobile App Security](05-Mobile/mobile-app-security-playbook.md)** — iOS/Android insecure storage, injection attacks, authentication bypass, reverse engineering
